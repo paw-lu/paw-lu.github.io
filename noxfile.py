@@ -126,3 +126,16 @@ def mypy(session: Session) -> None:
 
     if not session.posargs:
         session.run("mypy", f"--python-executable={sys.executable}", "noxfile.py")
+
+
+@session(python=python_version)
+def content(session: Session) -> None:
+    """Generate content."""
+    session.install("pelican[markdown]")
+    args = session.posargs
+
+    if session.interactive:
+        session.run("open", "http://127.0.0.1:8000", external=True)
+        args.extend(["--autoreload", "--listen"])
+
+    session.run("pelican", "content", *args)

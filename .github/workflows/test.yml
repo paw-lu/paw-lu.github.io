@@ -1,4 +1,4 @@
-name: Lint
+name: Test
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 
 jobs:
   release:
-    name: Lint
+    name: Test
     runs-on: ubuntu-latest
 
     env:
@@ -49,6 +49,10 @@ jobs:
       - name: Lint
         run: |
           nox
+
+      - name: Build site
+        run: |
+          nox --session content
 
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3

@@ -11,8 +11,7 @@ packages = [{ include = "paw_lu" }]
 python = "^3.11"
 pelican = { extras = ["markdown"], version = "^4.8.0" }
 
-
-[tool.poetry.group.lint.dependencies]
+[tool.poetry.dev-dependencies]
 black = "^22.10.0"
 flake8 = "^6.0.0"
 isort = "^5.10.1"

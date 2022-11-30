@@ -6,7 +6,7 @@ sys.path.append(os.curdir)
 import pelicanconf  # noqa: E402
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-pelicanconf.SITEURL = "http://paw-lu.github.io"
+pelicanconf.SITEURL = "https://paw-lu.github.io"
 # pelicanconf.RELATIVE_URLS = False
 
 pelicanconf.FEED_ALL_ATOM = "feeds/all.atom.xml"

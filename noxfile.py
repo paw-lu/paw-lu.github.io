@@ -131,7 +131,7 @@ def mypy(session: Session) -> None:
 @session(python=python_version)
 def content(session: Session) -> None:
     """Generate content."""
-    session.install("pelican[markdown]", "pelican-render-math")
+    session.install("beautifulsoup4", "pelican[markdown]", "pelican-render-math")
     args = session.posargs
 
     if session.interactive:

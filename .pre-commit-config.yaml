@@ -1,3 +1,4 @@
+exclude: "^theme/"
 repos:
   - repo: local
     hooks:

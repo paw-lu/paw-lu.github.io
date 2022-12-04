@@ -17,6 +17,7 @@ AUTHOR_FEED_ATOM: str | None = None
 AUTHOR_FEED_RSS: str | None = None
 
 DISPLAY_PAGES_ON_MENU = False
+THEME = "theme"
 
 # Blogroll
 LINKS = (

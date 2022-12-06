@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "paw-lu-github-io-src"
+name = "paw-lu-github-io"
 version = "0.1.0"
 description = "Source for generating GitHub user page"
 authors = ["Paulo S. Costa <pauloscosta5@gmail.com>"]

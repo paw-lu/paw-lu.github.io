@@ -7,6 +7,10 @@ module.exports = {
       "on-background": "#e4e3dd",
     },
     extend: {},
+    fontFamily: {
+      body: ["Space Grotesk"],
+      display: ["Space Mono"],
+    },
   },
   plugins: [],
 };

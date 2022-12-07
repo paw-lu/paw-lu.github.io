@@ -12,6 +12,7 @@ python = "^3.11"
 pelican = { extras = ["markdown"], version = "^4.8.0" }
 pelican-render-math = "^1.0.3"
 beautifulsoup4 = "^4.11.1"
+pelican-tailwindcss = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
 black = "^22.10.0"

@@ -322,6 +322,20 @@ typogrify = ">=2.0.7,<3.0.0"
 markdown = ["markdown (>=3.2.2,<4.0.0)"]
 
 [[package]]
+name = "pelican-tailwindcss"
+version = "0.2.0"
+description = "Pelican plugin to add TailwindCSS to your website."
+category = "main"
+optional = false
+python-versions = ">=3.6.2,<4.0"
+
+[package.dependencies]
+pelican = ">=4.5"
+
+[package.extras]
+markdown = ["markdown (>=3.2)"]
+
+[[package]]
 name = "pep8-naming"
 version = "0.13.2"
 description = "Check PEP-8 naming conventions, plugin for flake8"
@@ -585,7 +599,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.11"
-content-hash = "febce53cae36ed1c44bbd7975a2e6559bcb60777461fb6695b62806405947942"
+content-hash = "7b96bea123328c9ced75f1fa6c72949b006f3e3f43d557c7215674ebc1a5f2f3"
 
 [metadata.files]
 attrs = [
@@ -780,6 +794,10 @@ pelican = [
 pelican-render-math = [
     {file = "pelican-render-math-1.0.3.tar.gz", hash = "sha256:8ec02b410346d50d27211b7e0474516eb0bedf3e1b748d34f84d7cd8e85c859a"},
     {file = "pelican_render_math-1.0.3-py3-none-any.whl", hash = "sha256:168c58168b22875d966df81f7d660bf9cc2206b7cf4fde46dab63536c87a5438"},
+]
+pelican-tailwindcss = [
+    {file = "pelican-tailwindcss-0.2.0.tar.gz", hash = "sha256:f5943b7b0abdab9c49e2ed39ff4b808ff20ab04b7a35f49fb8b6d176cac17393"},
+    {file = "pelican_tailwindcss-0.2.0-py3-none-any.whl", hash = "sha256:15b57401b3ade2df036ee89f0acd5b3b20f987773ed40811305855bd8d761169"},
 ]
 pep8-naming = [
     {file = "pep8-naming-0.13.2.tar.gz", hash = "sha256:93eef62f525fd12a6f8c98f4dcc17fa70baae2f37fa1f73bec00e3e44392fa48"},

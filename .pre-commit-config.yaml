@@ -33,6 +33,9 @@ repos:
     rev: v2.6.0
     hooks:
       - id: prettier
+        additional_dependencies:
+          - prettier@2.1.2
+          - prettier-plugin-tailwindcss@0.2.0
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0

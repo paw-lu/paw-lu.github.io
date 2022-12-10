@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
         {% endif %}
@@ -37,7 +37,9 @@
         {% endblock head %}
 </head>
 
-<body class="bg-background text-on-background font-body">
+<body
+  class="bg-background prose prose-on-background prose-p:text-body-large prose-figcaption:text-label-large prose-headings:font-display prose-p:font-body prose-code:font-code prose-code:before:hidden prose-code:after:hidden hover:prose-a:text-on-primary-container prose-h1:text-headline-large prose-h2:text-headline-medium prose-h3:text-headline-small prose-h4:text-title-medium prose-img:rounded-3xl"
+>
         <header>
                 <h1><a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
         </header>

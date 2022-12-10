@@ -36,6 +36,7 @@ repos:
         additional_dependencies:
           - prettier@2.1.2
           - prettier-plugin-tailwindcss@0.2.0
+          - "@tailwindcss/typography@0.5.8"
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0

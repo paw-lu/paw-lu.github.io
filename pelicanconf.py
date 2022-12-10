@@ -18,6 +18,12 @@ AUTHOR_FEED_RSS: str | None = None
 
 DISPLAY_PAGES_ON_MENU = False
 THEME = "theme"
+TAILWIND = {
+    "version": "3.2.4",
+    "plugins": [
+        "@tailwindcss/typography@0.5.8",
+    ],
+}
 
 # Blogroll
 LINKS = (

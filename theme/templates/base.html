@@ -71,6 +71,7 @@
     prose-blockquote:border-secondary
     prose-blockquote:not-italic
     prose-blockquote:text-secondary
+    max-w-none
   "
 >
         <header>
@@ -91,7 +92,7 @@
           {% endfor %}
         {% endif %}
         </ul></nav>
-        <main>
+        <main class="relative w-full px-6 py-12 mx-auto max-w-3xl">
         {% block content %}
         {% endblock %}
         </main>

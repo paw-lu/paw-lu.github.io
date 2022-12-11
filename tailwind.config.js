@@ -29,8 +29,8 @@ module.exports = {
             "--tw-prose-captions": theme("colors.on-background"),
             "--tw-prose-code": theme("colors.on-surface-variant"),
             "--tw-prose-code-bg": theme("colors.surface-variant"),
-            "--tw-prose-pre-code": theme("colors.on-secondary-container"), // TODO: Probably get rid of this late
-            "--tw-prose-pre-bg": theme("colors.secondary-container"),
+            "--tw-prose-pre-code": theme("colors.on-surface-variant"), // TODO: Probably get rid of this late
+            "--tw-prose-pre-bg": theme("colors.surface-variant"),
             "--tw-prose-th-borders": theme("colors.on-background"),
             "--tw-prose-td-borders": theme("colors.on-background"),
             "--tw-prose-invert-body": theme("colors.on-background"),
@@ -47,7 +47,7 @@ module.exports = {
             "--tw-prose-invert-code": theme("colors.on-surface-variant"),
             "--tw-prose-invert-code-bg": theme("colors.surface-variant"),
             "--tw-prose-invert-pre-code": theme("colors.on-background"),
-            "--tw-prose-invert-pre-bg": theme("colors.secondary-container"),
+            "--tw-prose-invert-pre-bg": theme("colors.surface-variant"),
             "--tw-prose-invert-th-borders": theme("colors.on-background"),
             "--tw-prose-invert-td-borders": theme("colors.on-background"),
           },

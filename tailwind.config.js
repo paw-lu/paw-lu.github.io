@@ -7,6 +7,7 @@ module.exports = {
       secondary: "#59614e",
       background: "#fefcf6",
       "on-background": "#1b1c18",
+      "primary-container": "#c9ee9e",
       "on-primary-container": "#0f2000",
       "secondary-container": "#dde6cd",
       "on-secondary-container": "#171e0e",
@@ -93,6 +94,14 @@ module.exports = {
             lineHeight: "1.25rem",
             letterSpacing: "0.00625",
             fontWeight: "500",
+          },
+        ],
+        "title-large": [
+          "1.375rem",
+          {
+            lineHeight: "1.75rem",
+            letterSpacing: "0.0",
+            fontWeight: "400",
           },
         ],
       },

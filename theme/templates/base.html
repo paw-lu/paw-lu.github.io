@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
         {% endif %}
@@ -74,10 +75,11 @@
     max-w-none
   "
 >
-        <header>
-                <h1><a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
+        <header id="nav-bar" class="fixed z-50 h-14 top-0 left-0 right-0 not-prose no-underline snap-always bg-secondary-container text-on-secondary-container w-screen max-w-none text-title-large font-display">
+                <span class="material-symbols-outlined cursor-pointer" onclick="toggleMenu()">menu</span>
+                <a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
         </header>
-        <nav><ul>
+        <nav id="side-menu" class="bg-background left-[-250px] xl:left-0 rounded-r-3xl fixed mt-20 top-0  w-[240px] h-screen z-50 p-5 flex flex-col space-y-5 text-white duration-300"><ul>
         {% for title, link in MENUITEMS %}
             <li><a href="{{ link }}">{{ title }}</a></li>
         {% endfor %}
@@ -92,7 +94,30 @@
           {% endfor %}
         {% endif %}
         </ul></nav>
-        <main class="relative w-full px-6 py-12 mx-auto max-w-3xl">
+        <div id="screen" class="duration-300 fixed bg-secondary-container hidden opacity-75 xl:hidden z-40 w-screen max-w-none h-screen top-0 left-0 right-0" onclick="closeMenu()"></div>
+        <script>
+          var sideMenu = document.getElementById('side-menu');
+          var screen = document.getElementById('screen');
+          function openMenu() {
+            sideMenu.classList.remove('left-[-250px]');
+            sideMenu.classList.add('left-0');
+            screen.classList.remove("hidden");
+          }
+          function closeMenu() {
+            sideMenu.classList.remove('left-0');
+            sideMenu.classList.add('left-[-250px]');
+            screen.classList.add("hidden");
+          }
+          function toggleMenu() {
+            if (sideMenu.classList.contains('left-[-250px]')) {
+              openMenu()
+            }
+            else {
+              closeMenu()
+            }
+          }
+        </script>
+        <main id="main" class="relative w-full px-6 py-32 mx-auto max-w-3xl z-1">
         {% block content %}
         {% endblock %}
         </main>

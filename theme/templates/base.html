@@ -1,131 +1,180 @@
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
-<link rel="stylesheet" href="/output.css"/>
-<head>
-        {% block head %}
-        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        {% if FEED_ALL_ATOM %}
-        <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
-        {% endif %}
-        {% if FEED_ALL_RSS %}
-        <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
-        {% endif %}
-        {% if FEED_ATOM %}
-        <link href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
-        {% endif %}
-        {% if FEED_RSS %}
-        <link href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
-        {% endif %}
-        {% if CATEGORY_FEED_ATOM and category %}
-        <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
-        {% endif %}
-        {% if CATEGORY_FEED_RSS and category %}
-        <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
-        {% endif %}
-        {% if TAG_FEED_ATOM and tag %}
-        <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
-        {% endif %}
-        {% if TAG_FEED_RSS and tag %}
-        <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
-        {% endif %}
-        {% endblock head %}
-</head>
+  <link rel="stylesheet" href="/output.css" />
+  <head>
+    {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Pelican" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    {% if FEED_ALL_ATOM %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Full Atom Feed"
+    />
+    {% endif %} {% if FEED_ALL_RSS %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Full RSS Feed"
+    />
+    {% endif %} {% if FEED_ATOM %}
+    <link
+      href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Atom Feed"
+    />
+    {% endif %} {% if FEED_RSS %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} RSS Feed"
+    />
+    {% endif %} {% if CATEGORY_FEED_ATOM and category %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Categories Atom Feed"
+    />
+    {% endif %} {% if CATEGORY_FEED_RSS and category %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Categories RSS Feed"
+    />
+    {% endif %} {% if TAG_FEED_ATOM and tag %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Tags Atom Feed"
+    />
+    {% endif %} {% if TAG_FEED_RSS and tag %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Tags RSS Feed"
+    />
+    {% endif %} {% endblock head %}
+  </head>
 
-<body
-  class="
-    bg-background
-    prose
-    prose-on-background
-    prose-li:text-body-large
-    prose-li:font-body
-    prose-table:text-body-large
-    prose-table:font-body
-    prose-th:text-body-large
-    prose-th:font-body
-    prose-th:font-bold
-    prose-th:bg-primary/5
-    prose-thead:rounded-3xl
-    prose-p:text-body-large
-    prose-figcaption:text-label-large
-    prose-headings:font-display
-    prose-p:font-body
-    prose-pre:rounded-3xl
-    prose-pre:py-5
-    prose-code:font-code
-    prose-code:bg-surface-variant
-    prose-code:rounded-sm
-    prose-code:before:hidden
-    prose-code:after:hidden
-    hover:prose-a:text-on-primary-container
-    prose-h1:text-headline-large
-    prose-h2:text-headline-medium
-    prose-h3:text-headline-small
-    prose-h4:text-title-medium
-    prose-img:rounded-3xl
-    prose-blockquote:border-secondary
-    prose-blockquote:not-italic
-    prose-blockquote:text-secondary
-    max-w-none
-  "
->
-        <header id="nav-bar" class="fixed z-50 h-14 top-0 left-0 right-0 not-prose no-underline snap-always bg-secondary-container text-on-secondary-container w-screen max-w-none text-title-large font-display">
-                <span class="material-symbols-outlined cursor-pointer" onclick="toggleMenu()">menu</span>
-                <a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
-        </header>
-        <nav id="side-menu" class="bg-background left-[-250px] xl:left-0 rounded-r-3xl fixed mt-20 top-0  w-[240px] h-screen z-50 p-5 flex flex-col space-y-5 text-white duration-300"><ul>
+  <body
+    class="bg-background prose prose-on-background prose-li:text-body-large prose-li:font-body prose-table:text-body-large prose-table:font-body prose-th:text-body-large prose-th:font-body prose-th:font-bold prose-th:bg-primary/5 prose-thead:rounded-3xl prose-p:text-body-large prose-figcaption:text-label-large prose-headings:font-display prose-p:font-body prose-pre:rounded-3xl prose-pre:py-5 prose-code:font-code prose-code:bg-surface-variant prose-code:rounded-sm prose-code:before:hidden prose-code:after:hidden hover:prose-a:text-on-primary-container prose-h1:text-headline-large prose-h2:text-headline-medium prose-h3:text-headline-small prose-h4:text-title-medium prose-img:rounded-3xl prose-blockquote:border-secondary prose-blockquote:not-italic prose-blockquote:text-secondary max-w-none"
+  >
+    <header
+      id="nav-bar"
+      class="fixed flex flex-row z-50 h-14 top-0 left-0 right-0 not-prose no-underline snap-always bg-secondary-container text-on-secondary-container w-screen max-w-none text-title-large font-display"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 xl:hidden"
+        onclick="toggleMenu()"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+      <a href="{{ SITEURL }}/"
+        >{{ SITENAME }}{% if SITESUBTITLE %}
+        <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a
+      >
+    </header>
+    <nav
+      id="side-menu"
+      class="bg-background left-[-280px] xl:left-0 rounded-r-3xl fixed mt-20 top-0 w-[270px] h-screen z-50 p-2 flex flex-col space-y-5 duration-300"
+    >
+      <ul class="pl-0">
         {% for title, link in MENUITEMS %}
-            <li><a href="{{ link }}">{{ title }}</a></li>
-        {% endfor %}
-        {% if DISPLAY_PAGES_ON_MENU %}
-          {% for p in pages %}
-            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-          {% endfor %}
-        {% endif %}
-        {% if DISPLAY_CATEGORIES_ON_MENU %}
-          {% for cat, null in categories %}
-            <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-          {% endfor %}
-        {% endif %}
-        </ul></nav>
-        <div id="screen" class="duration-300 fixed bg-secondary-container hidden opacity-75 xl:hidden z-40 w-screen max-w-none h-screen top-0 left-0 right-0" onclick="closeMenu()"></div>
-        <script>
-          var sideMenu = document.getElementById('side-menu');
-          var screen = document.getElementById('screen');
-          function openMenu() {
-            sideMenu.classList.remove('left-[-250px]');
-            sideMenu.classList.add('left-0');
-            screen.classList.remove("hidden");
-          }
-          function closeMenu() {
-            sideMenu.classList.remove('left-0');
-            sideMenu.classList.add('left-[-250px]');
-            screen.classList.add("hidden");
-          }
-          function toggleMenu() {
-            if (sideMenu.classList.contains('left-[-250px]')) {
-              openMenu()
-            }
-            else {
-              closeMenu()
-            }
-          }
-        </script>
-        <main id="main" class="relative w-full px-6 py-32 mx-auto max-w-3xl z-1">
-        {% block content %}
-        {% endblock %}
-        </main>
-        <footer>
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-        </footer>
-</body>
+        <li class="capitalize list-none">
+          <a class="no-underline" href="{{ link }}">
+            <button class="px-4 py-3 text-left text-on-background">
+              {{ title }}
+            </button>
+          </a>
+        </li>
+        {% endfor %} {% if DISPLAY_PAGES_ON_MENU %} {% for p in pages %}
+        <li class="list-none max-w-none">
+          <a class="no-underline" href="{{ SITEURL }}/{{ p.url }}">
+            <button
+              class="capitalize w-full text-on-background text-left px-4 py-3 rounded-full focus:ring focus:ring-on-background {% if p == page -%} bg-secondary-container hover:bg-secondary-container/0 {%- else -%} hover:bg-secondary/[.12] {%- endif %}"
+            >
+              {{ p.title }}
+            </button>
+          </a>
+        </li>
+        {% endfor %} {% endif %} {% if DISPLAY_CATEGORIES_ON_MENU %} {% for cat,
+        null in categories %}
+        <li class="list-none max-w-none">
+          <a class="no-underline" href="{{ SITEURL }}/{{ cat.url }}">
+            <button
+              class="capitalize block w-full text-on-background text-left px-4 py-3 rounded-full focus:ring focus:ring-on-background {% if cat == category -%} bg-secondary-container hover:bg-secondary-container/0 {%- else -%} hover:bg-secondary/[.12] {%- endif %}"
+            >
+              {{ cat }}
+            </button>
+          </a>
+        </li>
+        {% endfor %} {% endif %}
+      </ul>
+    </nav>
+    <div
+      id="screen"
+      class="duration-300 fixed bg-secondary-container hidden opacity-75 xl:hidden z-40 w-screen max-w-none h-screen top-0 left-0 right-0"
+      onclick="closeMenu()"
+    ></div>
+    <script>
+      var sideMenu = document.getElementById("side-menu");
+      var screen = document.getElementById("screen");
+      function openMenu() {
+        sideMenu.classList.remove("left-[-280px]");
+        sideMenu.classList.add("left-0");
+        screen.classList.remove("hidden");
+      }
+      function closeMenu() {
+        sideMenu.classList.remove("left-0");
+        sideMenu.classList.add("left-[-280px]");
+        screen.classList.add("hidden");
+      }
+      function toggleMenu() {
+        if (sideMenu.classList.contains("left-[-280px]")) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      }
+    </script>
+    <main id="main" class="relative w-full px-6 py-32 mx-auto max-w-3xl z-1">
+      {% block content %} {% endblock %}
+    </main>
+    <footer>
+      <address id="about" class="vcard body">
+        Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which
+        takes great advantage of <a href="https://www.python.org/">Python</a>.
+      </address>
+      <!-- /#about -->
+    </footer>
+  </body>
 </html>

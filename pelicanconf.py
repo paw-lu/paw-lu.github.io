@@ -16,7 +16,7 @@ TRANSLATION_FEED_ATOM: str | None = None
 AUTHOR_FEED_ATOM: str | None = None
 AUTHOR_FEED_RSS: str | None = None
 
-DISPLAY_PAGES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = True
 THEME = "theme"
 TAILWIND = {
     "version": "3.2.4",

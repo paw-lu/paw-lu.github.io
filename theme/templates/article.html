@@ -21,16 +21,23 @@ translations.entry_hreflang(article) }} {% endif %} {% if article.description %}
   translations.translations_for(article) }}
 </header>
 <footer class="post-info">
-  <time
-    class="published text-label-large"
-    datetime="{{ article.date.isoformat() }}"
-  >
-    {{ article.date|strftime("%b %d %Y")}}
-  </time>
-  {% if article.modified %}
-  <time class="modified" datetime="{{ article.modified.isoformat() }}">
-    {{ article.locale_modified }}
-  </time>
+  <div>
+    <time
+      class="published text-label-large"
+      datetime="{{ article.date.isoformat() }}"
+    >
+      {{ article.date|strftime("%b %d %Y")}}
+    </time>
+    {% if article.modified %}
+  </div>
+  <div>
+    <time
+      class="modified text-label-large italic"
+      datetime="{{ article.modified.isoformat() }}"
+    >
+      Updated on {{ article.modified|strftime("%b %d %Y") }}
+    </time>
+  </div>
   {% endif %} {% if article.authors %}
   <address class="vcard author">
     {% for author in article.authors %}

@@ -21,8 +21,11 @@ translations.entry_hreflang(article) }} {% endif %} {% if article.description %}
   translations.translations_for(article) }}
 </header>
 <footer class="post-info">
-  <time class="published" datetime="{{ article.date.isoformat() }}">
-    {{ article.locale_date }}
+  <time
+    class="published text-label-large"
+    datetime="{{ article.date.isoformat() }}"
+  >
+    {{ article.date|strftime("%b %d %Y")}}
   </time>
   {% if article.modified %}
   <time class="modified" datetime="{{ article.modified.isoformat() }}">

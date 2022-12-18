@@ -13,6 +13,9 @@ module.exports = {
       "on-secondary-container": "#171e0e",
       "surface-variant": "#e2e4d8",
       "on-surface-variant": "#45483f",
+      "tertiary-container": "#c5eae7",
+      "on-tertiary-container": "#00201f",
+      outline: "#75786e",
     },
     extend: {
       typography: ({ theme }) => ({
@@ -104,6 +107,10 @@ module.exports = {
             fontWeight: "400",
           },
         ],
+      },
+      boxShadow: {
+        "elevation-1":
+          "0px 3px 1px -2px rgb(0 0 0 / 0.2), 0px 2px 2px 0px rgb(0 0 0 / 0.14), 0px 1px 5px 0px rgb(0 0 0 / 0.12)",
       },
     },
     fontFamily: {

@@ -42,9 +42,13 @@ translations.entry_hreflang(article) }} {% endif %} {% if article.description %}
     >
   </div>
   {% endif %} {% if article.tags %}
-  <div class="tags">
-    Tags: {% for tag in article.tags %}
-    <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+  <div class="tags space-x-1 my-3">
+    {% for tag in article.tags %}
+    <a
+      href="{{ SITEURL }}/{{ tag.url }}"
+      class="rounded-lg px-3 py-1 no-underline hover:shadow-elevation-1 hover:bg-primary/[0.05] outline outline-1 outline-outline text-on-background text-label-large"
+      >{{ tag }}</a
+    >
     {% endfor %}
   </div>
   {% endif %}

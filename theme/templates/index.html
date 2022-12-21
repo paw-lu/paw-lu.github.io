@@ -1,42 +1,51 @@
 {% extends "base.html" %} {% block content %}
-<section id="content">
+<section id="content" class="mx-auto max-w-3xl 2xl:max-w-6xl pt-32 px-3">
   {% block content_title %}
   <h2>All articles</h2>
   {% endblock %}
 
-  <ol id="post-list">
+  <div
+    id="post-list"
+    class="grid 2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-3"
+  >
     {% for article in articles_page.object_list %}
-    <li>
+    <div
+      class="w-full bg-primary/5 rounded-3xl hover:rounded-xl hover:bg-primary/[0.12] p-4 relative duration-300 focus:ring focus:ring-on-background"
+    >
       <article class="hentry">
         <header>
-          <h2 class="entry-title">
+          <h2 class="entry-title mt-0">
             <a
               href="{{ SITEURL }}/{{ article.url }}"
               rel="bookmark"
               title="Permalink to {{ article.title|striptags }}"
+              class="no-underline text-on-background mt-2 after:absolute after:inset-0"
               >{{ article.title }}</a
             >
           </h2>
         </header>
         <footer class="post-info">
-          <time class="published" datetime="{{ article.date.isoformat() }}">
-            {{ article.locale_date }}
+          <time
+            class="published text-label-large"
+            datetime="{{ article.date.isoformat() }}"
+          >
+            {{ article.date|strftime("%b %d %Y") }}
           </time>
           <address class="vcard author">
-            By {% for author in article.authors %}
-            <a class="url fn" href="{{ SITEURL }}/{{ author.url }}"
-              >{{ author }}</a
+            {% for author in article.authors -%}
+            <a
+              class="url fn no-underline not-italic text-on-background text-body-large"
+              href="{{ SITEURL }}/{{ author.url }}"
+              >{%- if not loop.first %}, {% endif -%}{{ author }}</a
             >
-            {% endfor %}
+            {%- endfor %}
           </address>
         </footer>
-        <!-- /.post-info -->
-        <div class="entry-content">{{ article.summary }}</div>
         <!-- /.entry-content -->
       </article>
-    </li>
+    </div>
     {% endfor %}
-  </ol>
+  </div>
   <!-- /#posts-list -->
   {% if articles_page.has_other_pages() %} {% include 'pagination.html' %} {%
   endif %}

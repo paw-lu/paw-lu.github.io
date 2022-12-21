@@ -7,61 +7,63 @@ translations.entry_hreflang(article) }} {% endif %} {% if article.description %}
 {% endif %} {% for tag in article.tags %}
 <meta name="tags" content="{{tag}}" />
 {% endfor %} {% endblock %} {% block content %}
-<header>
-  <h1 class="entry-title">
-    <a
-      href="{{ SITEURL }}/{{ article.url }}"
-      rel="bookmark"
-      title="Permalink to {{ article.title|striptags }}"
-      class="text-display-large text-on-background font-display no-underline"
-      >{{ article.title }}</a
-    >
-  </h1>
-  {% import 'translations.html' as translations with context %} {{
-  translations.translations_for(article) }}
-</header>
-<footer class="post-info">
-  <div>
-    <time
-      class="published text-label-large"
-      datetime="{{ article.date.isoformat() }}"
-    >
-      {{ article.date|strftime("%b %d %Y")}}
-    </time>
-    {% if article.modified %}
-  </div>
-  <div>
-    <time
-      class="modified text-label-large italic"
-      datetime="{{ article.modified.isoformat() }}"
-    >
-      Updated on {{ article.modified|strftime("%b %d %Y") }}
-    </time>
-  </div>
-  {% endif %} {% if article.authors %}
-  <address class="vcard author">
-    {% for author in article.authors %}
-    <li class="list-none">
+<div class="relative w-full px-6 py-32 max-w-3xl mx-auto">
+  <header>
+    <h1 class="entry-title">
       <a
-        class="url fn no-underline not-italic text-on-background text-body-large font-bold"
-        href="{{ SITEURL }}/{{ author.url }}"
-        >{{ author }}</a
+        href="{{ SITEURL }}/{{ article.url }}"
+        rel="bookmark"
+        title="Permalink to {{ article.title|striptags }}"
+        class="text-display-large text-on-background font-display no-underline"
+        >{{ article.title }}</a
       >
-    </li>
-    {% endfor %}
-  </address>
-  {% endif %} {% if article.tags %}
-  <div class="tags space-x-1 my-3">
-    {% for tag in article.tags %}
-    <a
-      href="{{ SITEURL }}/{{ tag.url }}"
-      class="rounded-lg px-3 py-1 no-underline hover:shadow-elevation-1 hover:bg-primary/[0.05] outline outline-1 outline-outline text-on-background text-label-large"
-      >{{ tag }}</a
-    >
-    {% endfor %}
-  </div>
-  {% endif %}
-</footer>
-<!-- /.post-info -->
-<article class="mt-20">{{ article.content }}</article>
+    </h1>
+    {% import 'translations.html' as translations with context %} {{
+    translations.translations_for(article) }}
+  </header>
+  <footer class="post-info">
+    <div>
+      <time
+        class="published text-label-large"
+        datetime="{{ article.date.isoformat() }}"
+      >
+        {{ article.date|strftime("%b %d %Y") }}
+      </time>
+      {% if article.modified %}
+    </div>
+    <div>
+      <time
+        class="modified text-label-large italic"
+        datetime="{{ article.modified.isoformat() }}"
+      >
+        Updated on {{ article.modified|strftime("%b %d %Y") }}
+      </time>
+    </div>
+    {% endif %} {% if article.authors %}
+    <address class="vcard author">
+      {% for author in article.authors %}
+      <li class="list-none">
+        <a
+          class="url fn no-underline not-italic text-on-background text-body-large font-bold"
+          href="{{ SITEURL }}/{{ author.url }}"
+          >{{ author }}</a
+        >
+      </li>
+      {% endfor %}
+    </address>
+    {% endif %} {% if article.tags %}
+    <div class="tags space-x-1 my-3">
+      {% for tag in article.tags %}
+      <a
+        href="{{ SITEURL }}/{{ tag.url }}"
+        class="rounded-lg px-3 py-1 no-underline hover:shadow-elevation-1 hover:bg-primary/[0.05] outline outline-1 outline-outline text-on-background text-label-large"
+        >{{ tag }}</a
+      >
+      {% endfor %}
+    </div>
+    {% endif %}
+  </footer>
+  <!-- /.post-info -->
+  <article class="mt-20">{{ article.content }}</article>
+</div>
 {% endblock %}

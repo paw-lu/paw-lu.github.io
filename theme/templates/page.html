@@ -4,6 +4,25 @@ head %} {{ super() }} {% import 'translations.html' as translations with context
 %} {% if translations.entry_hreflang(page) %} {{
 translations.entry_hreflang(page) }} {% endif %} {% endblock %} {% block content
 %} {% import 'translations.html' as translations with context %} {{
-translations.translations_for(page) }} {{ page.content }} {% if page.modified %}
-<p>Last updated: {{ page.locale_modified }}</p>
-{% endif %} {% endblock %}
+translations.translations_for(page) }}
+<div
+  class="w-full px-6 py-32 max-w-3xl mx-auto flex flex-col h-screen justify-between"
+>
+  <div class="mb-auto">{{ page.content }}</div>
+  <footer class="bottom-0">
+    <address id="about" class="vcard body text-label-large not-italic">
+      This website was created with the help of
+      <a href="https://www.python.org/">Python</a>,
+      <a href="https://getpelican.com/">Pelican</a>,
+      <a href="https://tailwindcss.com/">tailwindcss</a>,
+      <a href="https://nox.thea.codes/en/stable/">nox</a>, and
+      <a href="https://github.com/features/actions">GiHub Actions</a>. The
+      source is available at
+      <a href="https://github.com/paw-lu/paw-lu.github.io"
+        >paw-lu/paw-lu.github.io</a
+      >.
+    </address>
+    <!-- /#about -->
+  </footer>
+</div>
+{% endblock %}

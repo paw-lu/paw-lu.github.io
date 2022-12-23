@@ -9,6 +9,9 @@ translations.entry_hreflang(article) }} {% endif %} {% if article.description %}
 {% endfor %} {% endblock %} {% block content %}
 <div class="relative w-full px-6 py-32 max-w-3xl mx-auto">
   <header>
+    {%- if article.hero %}
+    <img class="aspect-video object-cover" src="{{ article.hero }}" />
+    {%- endif %}
     <h1 class="entry-title">
       <a
         href="{{ SITEURL }}/{{ article.url }}"

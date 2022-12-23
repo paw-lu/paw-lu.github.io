@@ -14,6 +14,12 @@
     >
       <article class="hentry">
         <header>
+          {%- if article.hero %}
+          <img
+            class="aspect-video object-cover mt-0"
+            src="{{ article.hero }}"
+          />
+          {%- endif %}
           <h2 class="entry-title mt-0">
             <a
               href="{{ SITEURL }}/{{ article.url }}"

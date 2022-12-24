@@ -21,10 +21,14 @@ translations.entry_hreflang(article) }} {% endif %} {% if article.description %}
         >{{ article.title }}</a
       >
     </h1>
-    {% import 'translations.html' as translations with context %} {{
-    translations.translations_for(article) }}
+    {%- if article.subtitle %}
+    <div class="text-on-background text-title-large font-body">
+      {{ article.subtitle }}
+    </div>
+    {%- endif %} {% import 'translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
   </header>
-  <footer class="post-info">
+  <footer class="post-info mt-5">
     <div>
       <time
         class="published text-label-large"

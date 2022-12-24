@@ -12,15 +12,15 @@
     <div
       class="w-full bg-primary/5 rounded-3xl hover:rounded-xl hover:bg-primary/[0.12] p-4 relative duration-300 focus:ring focus:ring-on-background"
     >
-      <article class="hentry">
-        <header>
+      <article class="hentry flex flex-col justify-between h-full">
+        <header class="mb-auto">
           {%- if article.hero %}
           <img
             class="aspect-video object-cover mt-0"
             src="{{ article.hero }}"
           />
           {%- endif %}
-          <h2 class="entry-title mt-0">
+          <h1 class="not-prose entry-title mb-3">
             <a
               href="{{ SITEURL }}/{{ article.url }}"
               rel="bookmark"
@@ -28,9 +28,14 @@
               class="no-underline text-on-background mt-2 after:absolute after:inset-0"
               >{{ article.title }}</a
             >
-          </h2>
+          </h1>
+          {%- if article.subtitle %}
+          <div class="text-on-background text-title-large font-body">
+            {{ article.subtitle }}
+          </div>
+          {%- endif %}
         </header>
-        <footer class="post-info">
+        <footer class="post-info mt-5 bottom-0">
           <time
             class="published text-label-large"
             datetime="{{ article.date.isoformat() }}"

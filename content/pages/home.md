@@ -2,8 +2,12 @@ Title: Home
 URL:
 save_as: index.html
 
-Nostrud ut anim cupidatat ut sit ullamco. Laboris veniam id officia velit
-labore do cupidatat incididunt. Mollit dolore elit culpa excepteur cupidatat
-deserunt reprehenderit nisi. Non nisi culpa ut nisi eu fugiat reprehenderit
-reprehenderit minim. Et aliqua labore aliqua cupidatat culpa incididunt eu
-cillum.
+# Hey, I'm Paulo S. Costa
+
+I do data science
+and software engineering work
+mostly centered around machine learning systems.
+I'm currently working at Instagram on the recommendations machine learning team.
+Before that I worked on ads ML teams at Meta in both the core machine learning team
+and machine learning infra team.
+I also do some open source work around Python.

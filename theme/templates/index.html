@@ -1,12 +1,15 @@
 {% extends "base.html" %} {% block content %}
-<section id="content" class="mx-auto max-w-3xl 2xl:max-w-6xl pt-32 px-3">
+<section
+  id="content"
+  class="mx-auto max-w-3xl min-[1680px]:max-w-6xl pt-32 px-3"
+>
   {% block content_title %}
   <h2>All articles</h2>
   {% endblock %}
 
   <div
     id="post-list"
-    class="grid 2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-3"
+    class="grid min-[1680px]:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-3"
   >
     {% for article in articles_page.object_list %}
     <div

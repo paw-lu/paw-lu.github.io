@@ -1,4 +1,4 @@
-exclude: "^theme/"
+exclude: "^theme/|content/images/dash_demo.gif"
 repos:
   - repo: local
     hooks:

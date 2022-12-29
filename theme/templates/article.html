@@ -81,6 +81,26 @@ translations.entry_hreflang(article) }} {% endif %} {% if article.description %}
     {% endif %}
   </footer>
   <!-- /.post-info -->
-  <article class="mt-20">{{ article.content }}</article>
+  <div class="w-full justify-between">
+    <article class="mt-20 mb-auto">{{ article.content }}</article>
+    <footer class="bottom-0 mt-20">
+      <address id="about" class="vcard body text-label-large not-italic">
+        This website was created with the help of
+        <a href="https://www.python.org/">Python</a>,
+        <a href="https://getpelican.com/">Pelican</a>,
+        <a href="https://tailwindcss.com/">tailwindcss</a>,
+        <a href="https://nox.thea.codes/en/stable/">nox</a>, and
+        <a href="https://github.com/features/actions">GiHub Actions</a>. The
+        source is available at
+        <a href="https://github.com/paw-lu/paw-lu.github.io"
+          >paw-lu/paw-lu.github.io</a
+        >. {%- if article.hero_source and article.hero_name %} Hero image
+        provided by
+        <a href="{{ article.hero_source }}">{{ article.hero_name }}</a>. {%-
+        endif %}
+      </address>
+      <!-- /#about -->
+    </footer>
+  </div>
 </div>
 {% endblock %}

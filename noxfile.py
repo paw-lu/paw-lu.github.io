@@ -143,4 +143,7 @@ def content(session: Session) -> None:
         session.run("open", "http://127.0.0.1:8000", external=True)
         args.extend(["--autoreload", "--listen"])
 
+    else:
+        args.extend(["--settings=publishconf.py"])
+
     session.run("pelican", "content", *args)

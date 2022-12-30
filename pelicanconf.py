@@ -41,5 +41,18 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = False
 
+STATIC_PATHS = [
+    "images",
+    "favicons",
+]
+EXTRA_PATH_METADATA = {
+    "favicons/favicon.ico": {"path": "favicon.ico"},
+    "favicons/apple-touch-icon.png": {"path": "apple-touch-icon.png"},
+    "favicons/favicon-32x32.png": {"path": "favicon-32x32.png"},
+    "favicons/favicon-16x16.png": {"path": "favicon-16x16.png"},
+    "favicons/site.webmanifest": {"path": "site.webmanifest"},
+    "favicons/safari-pinned-tab.svg": {"path": "safari-pinned-tab.svg"},
+}
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True

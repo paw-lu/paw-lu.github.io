@@ -6,6 +6,7 @@ Authors: Paulo S. Costa, Jessica De Silva
 Summary: Sed do eiusmod tempor incididunt
 lang: en
 translation: false
+Status: hidden
 
 ```python
 """Example syntax highlighting."""

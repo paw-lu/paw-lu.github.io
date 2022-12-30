@@ -53,6 +53,7 @@ EXTRA_PATH_METADATA = {
     "favicons/site.webmanifest": {"path": "site.webmanifest"},
     "favicons/safari-pinned-tab.svg": {"path": "safari-pinned-tab.svg"},
 }
+DEFAULT_DATE = "fs"
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True

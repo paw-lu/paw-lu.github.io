@@ -1,7 +1,7 @@
 Title: nbpreview
 Subtitle: View your jupyter notebooks on the command line
 Tags: Python, Open source, Jupyter
-Date: 2020-12-12
+Date: 2021-8-31
 Hero: /images/composition-notebook.jpg
 hero_name: Paul Thek
 hero_source: https://www.wikiart.org/en/paul-thek/untitled-penmate-composition-notebook-detail-1976

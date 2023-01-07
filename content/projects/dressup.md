@@ -2,7 +2,7 @@ Title: Dress up
 Subtitle: Turning your words to 𝔴𝔬𝔯𝔡𝔰, 🆆🅾🆁🅳🆂, and 𝔀𝓸𝓻𝓭𝓼
 Hero: /images/the_reluctant_bride.webp
 Tags: Python, Open source
-Date: 2010-12-12
+Date: 2020-4-26
 Project: https://dressup.readthedocs.io/en/latest/
 hero_name: The reluctant bride by Auguste Toulmouche
 hero_source: https://www.wikiart.org/en/auguste-toulmouche/the-reluctant-bride-1866

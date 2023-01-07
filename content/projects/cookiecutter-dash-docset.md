@@ -1,7 +1,7 @@
 Title: Cookiecutter Dash docset
 Subtitle: Automating the generation of documentation for scientific Python libraries
 Tags: Python, Open source, Jupyter
-Date: 2020-10-12
+Date: 2022-11-25
 Hero: /images/still-life-with-cookies.jpg
 Project: https://paw-lu.github.io/cookiecutter-dash-docset/
 hero_name: Still Life with Cookies by John Stuart Ingle

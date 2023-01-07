@@ -1,4 +1,4 @@
-exclude: '^theme/|content/images/\w+.gif|/images/europeana_dark.webp'
+exclude: '^theme/|content/images/\w+.gif|/images/\w+.webp'
 repos:
   - repo: local
     hooks:

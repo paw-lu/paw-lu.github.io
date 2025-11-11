@@ -1,7 +1,8 @@
 """Configuration for Pelican."""
+
 AUTHOR = "Paulo S. Costa"
 SITENAME = "Paulo S. Costa"
-SITEURL = ""
+SITEURL: str = ""
 
 PATH = "content"
 
@@ -54,6 +55,3 @@ EXTRA_PATH_METADATA = {
     "favicons/safari-pinned-tab.svg": {"path": "safari-pinned-tab.svg"},
 }
 DEFAULT_DATE = "fs"
-
-# Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
